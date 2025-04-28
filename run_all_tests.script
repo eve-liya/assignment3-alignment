@@ -1,0 +1,22 @@
+Script started on 2025-04-28 08:56:35+00:00 [TERM="xterm-256color" TTY="/dev/pts/5" COLUMNS="135" LINES="15"]
+]0;vchan26@gn-16-30-00:~/ECE491B/assignment3-alignment[?2004h]633;A(eceassignment1) [vchan26@gn-16-30-00 assignment3-alignment]$ ]633;Bpytest
+[?2004l[1m========================================================= test session starts =========================================================[0m
+platform linux -- Python 3.10.16, pytest-8.3.4, pluggy-1.5.0
+rootdir: /home/vchan26/ECE491B/assignment3-alignment
+configfile: pytest.ini
+plugins: anyio-4.9.0
+[1mcollecting ... [0m[1mcollecting 2 items                                                                                                                    [0m[1mcollected 7 items                                                                                                                     [0m
+
+tests/test_data.py::test_packed_sft_dataset [32mPASSED[0m[32m                                                                              [ 14%][0m
+tests/test_data.py::test_iterate_batches [32mPASSED[0m[32m                                                                                 [ 28%][0m
+tests/test_dpo.py::test_per_instance_dpo_loss [32mPASSED[0m[32m                                                                            [ 42%][0m
+tests/test_metrics.py::test_parse_mmlu_response [32mPASSED[0m[32m                                                                          [ 57%][0m
+tests/test_metrics.py::test_parse_mmlu_response_unknown [32mPASSED[0m[32m                                                                  [ 71%][0m
+tests/test_metrics.py::test_parse_gsm8k_response [32mPASSED[0m[32m                                                                         [ 85%][0m
+tests/test_metrics.py::test_parse_gsm8k_response_unknown [32mPASSED[0m[32m                                                                 [100%][0m
+
+[32m========================================================== [32m[1m7 passed[0m[32m in 9.72s[0m[32m ==========================================================[0m
+]0;vchan26@gn-16-30-00:~/ECE491B/assignment3-alignment[?2004h]633;A(eceassignment1) [vchan26@gn-16-30-00 assignment3-alignment]$ ]633;Bexit
+[?2004lexit
+
+Script done on 2025-04-28 08:57:03+00:00 [COMMAND_EXIT_CODE="0"]

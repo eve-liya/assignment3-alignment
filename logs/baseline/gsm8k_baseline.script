@@ -1,0 +1,28 @@
+INFO 04-26 07:40:34 [__init__.py:239] Automatically detected platform cuda.
+INFO 04-26 07:40:37 [config.py:2832] Downcasting torch.float32 to torch.float16.
+INFO 04-26 07:40:47 [config.py:689] This model supports multiple tasks: {'generate', 'score', 'reward', 'embed', 'classify'}. Defaulting to 'generate'.
+WARNING 04-26 07:40:47 [arg_utils.py:1731] Compute Capability < 8.0 is not supported by the V1 Engine. Falling back to V0. 
+INFO 04-26 07:40:47 [llm_engine.py:243] Initializing a V0 LLM engine (v0.8.4) with config: model='../Qwen_Qwen2.5-0.5B', speculative_config=None, tokenizer='../Qwen_Qwen2.5-0.5B', skip_tokenizer_init=False, tokenizer_mode=auto, revision=None, override_neuron_config=None, tokenizer_revision=None, trust_remote_code=False, dtype=torch.float16, max_seq_len=32768, download_dir=None, load_format=auto, tensor_parallel_size=1, pipeline_parallel_size=1, disable_custom_all_reduce=False, quantization=None, enforce_eager=False, kv_cache_dtype=auto,  device_config=cuda, decoding_config=DecodingConfig(guided_decoding_backend='auto', reasoning_backend=None), observability_config=ObservabilityConfig(show_hidden_metrics=False, otlp_traces_endpoint=None, collect_model_forward_time=False, collect_model_execute_time=False), seed=None, served_model_name=../Qwen_Qwen2.5-0.5B, num_scheduler_steps=1, multi_step_stream_outputs=True, enable_prefix_caching=None, chunked_prefill_enabled=False, use_async_output_proc=True, disable_mm_preprocessor_cache=False, mm_processor_kwargs=None, pooler_config=None, compilation_config={"splitting_ops":[],"compile_sizes":[],"cudagraph_capture_sizes":[256,248,240,232,224,216,208,200,192,184,176,168,160,152,144,136,128,120,112,104,96,88,80,72,64,56,48,40,32,24,16,8,4,2,1],"max_capture_size":256}, use_cached_outputs=False, 
+INFO 04-26 07:40:48 [cuda.py:240] Cannot use FlashAttention-2 backend for Volta and Turing GPUs.
+INFO 04-26 07:40:48 [cuda.py:289] Using XFormers backend.
+INFO 04-26 07:40:49 [parallel_state.py:959] rank 0 in world size 1 is assigned as DP rank 0, PP rank 0, TP rank 0
+INFO 04-26 07:40:49 [model_runner.py:1110] Starting to load model ../Qwen_Qwen2.5-0.5B...
+INFO 04-26 07:40:50 [loader.py:458] Loading weights took 0.55 seconds
+INFO 04-26 07:40:50 [model_runner.py:1146] Model loading took 0.9277 GiB and 0.643839 seconds
+INFO 04-26 07:40:51 [worker.py:267] Memory profiling takes 0.96 seconds
+INFO 04-26 07:40:51 [worker.py:267] the current vLLM instance can use total_gpu_memory (15.56GiB) x gpu_memory_utilization (0.90) = 14.00GiB
+INFO 04-26 07:40:51 [worker.py:267] model weights take 0.93GiB; non_torch_memory takes 0.05GiB; PyTorch activation peak memory takes 1.44GiB; the rest of the memory reserved for KV Cache is 11.58GiB.
+INFO 04-26 07:40:51 [executor_base.py:112] # cuda blocks: 63259, # CPU blocks: 21845
+INFO 04-26 07:40:51 [executor_base.py:117] Maximum concurrency for 32768 tokens per request: 30.89x
+INFO 04-26 07:40:54 [model_runner.py:1456] Capturing cudagraphs for decoding. This may lead to unexpected consequences if the model is not static. To run the model in eager mode, set 'enforce_eager=True' or use '--enforce-eager' in the CLI. If out-of-memory error occurs during cudagraph capture, consider decreasing `gpu_memory_utilization` or switching to eager mode. You can also reduce the `max_num_seqs` as needed to decrease memory usage.
+INFO 04-26 07:41:08 [model_runner.py:1598] Graph capturing finished in 14 secs, took 0.16 GiB
+INFO 04-26 07:41:08 [llm_engine.py:449] init engine (profile, create kv cache, warmup model) took 18.35 seconds
+
+=== GSM8K Zero-Shot Baseline ===
+Total examples:   1319
+Accuracy:         0.00% (0/1319)
+Parse failures:   391
+Throughput:       43.65 examples/sec
+
+Sample parse failure (raw output):
+   To determine the total number of bolts needed for the robe, we need to calculate the amount of blue and white fiber required and then sum them up.

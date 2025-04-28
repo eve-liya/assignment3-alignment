@@ -52,7 +52,7 @@ def format_prompt(example: Dict[str, Any]) -> str:
 def main():
     p = argparse.ArgumentParser()
     p.add_argument("--data-dir",    required=True, help="Folder of MMLU CSVs")
-    p.add_argument("--model-path",  required=True, help="Path to Qwen2.5-0.5B model")
+    p.add_argument("--model-path",  required=True, help="Path to Qwen model")
     p.add_argument("--batch-size",  type=int, default=8)
     p.add_argument("--output-file", default="mmlu_dev_results.json")
     p.add_argument("--seed",        type=int, default=42)
@@ -115,7 +115,7 @@ def main():
     print(f"→ Results saved to {args.output_file}\n")
 
     # 6) Print summary
-    print("=== MMLU Zero-Shot Dev Summary ===")
+    print("=== MMLU Eval Summary ===")
     print(f"Examples:        {len(examples)}")
     print(f"Accuracy:        {accuracy*100:.2f}%")
     print(f"Parse failures:  {num_fail}")

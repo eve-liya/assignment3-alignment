@@ -1,0 +1,55 @@
+INFO 04-28 06:40:37 [__init__.py:239] Automatically detected platform cuda.
+INFO 04-28 06:40:39 [config.py:2832] Downcasting torch.float32 to torch.float16.
+INFO 04-28 06:40:50 [config.py:689] This model supports multiple tasks: {'embed', 'classify', 'score', 'reward', 'generate'}. Defaulting to 'generate'.
+WARNING 04-28 06:40:50 [arg_utils.py:1731] Compute Capability < 8.0 is not supported by the V1 Engine. Falling back to V0. 
+INFO 04-28 06:40:50 [config.py:1713] Defaulting to use mp for distributed inference
+INFO 04-28 06:40:50 [llm_engine.py:243] Initializing a V0 LLM engine (v0.8.4) with config: model='../Qwen_Qwen2.5-3B-Instruct/', speculative_config=None, tokenizer='../Qwen_Qwen2.5-3B-Instruct/', skip_tokenizer_init=False, tokenizer_mode=auto, revision=None, override_neuron_config=None, tokenizer_revision=None, trust_remote_code=True, dtype=torch.float16, max_seq_len=6144, download_dir=None, load_format=auto, tensor_parallel_size=2, pipeline_parallel_size=1, disable_custom_all_reduce=False, quantization=None, enforce_eager=False, kv_cache_dtype=auto,  device_config=cuda, decoding_config=DecodingConfig(guided_decoding_backend='auto', reasoning_backend=None), observability_config=ObservabilityConfig(show_hidden_metrics=False, otlp_traces_endpoint=None, collect_model_forward_time=False, collect_model_execute_time=False), seed=None, served_model_name=../Qwen_Qwen2.5-3B-Instruct/, num_scheduler_steps=1, multi_step_stream_outputs=True, enable_prefix_caching=None, chunked_prefill_enabled=False, use_async_output_proc=True, disable_mm_preprocessor_cache=False, mm_processor_kwargs=None, pooler_config=None, compilation_config={"splitting_ops":[],"compile_sizes":[],"cudagraph_capture_sizes":[256,248,240,232,224,216,208,200,192,184,176,168,160,152,144,136,128,120,112,104,96,88,80,72,64,56,48,40,32,24,16,8,4,2,1],"max_capture_size":256}, use_cached_outputs=False, 
+WARNING 04-28 06:40:50 [multiproc_worker_utils.py:306] Reducing Torch parallelism from 2 threads to 1 to avoid unnecessary CPU contention. Set OMP_NUM_THREADS in the external environment to tune this value as needed.
+[1;36m(VllmWorkerProcess pid=133674)[0;0m INFO 04-28 06:40:50 [multiproc_worker_utils.py:225] Worker ready; awaiting tasks
+INFO 04-28 06:40:52 [cuda.py:240] Cannot use FlashAttention-2 backend for Volta and Turing GPUs.
+INFO 04-28 06:40:52 [cuda.py:289] Using XFormers backend.
+[1;36m(VllmWorkerProcess pid=133674)[0;0m INFO 04-28 06:40:52 [cuda.py:240] Cannot use FlashAttention-2 backend for Volta and Turing GPUs.
+[1;36m(VllmWorkerProcess pid=133674)[0;0m INFO 04-28 06:40:52 [cuda.py:289] Using XFormers backend.
+INFO 04-28 06:40:53 [utils.py:993] Found nccl from library libnccl.so.2
+[1;36m(VllmWorkerProcess pid=133674)[0;0m INFO 04-28 06:40:53 [utils.py:993] Found nccl from library libnccl.so.2
+INFO 04-28 06:40:53 [pynccl.py:69] vLLM is using nccl==2.21.5
+[1;36m(VllmWorkerProcess pid=133674)[0;0m INFO 04-28 06:40:53 [pynccl.py:69] vLLM is using nccl==2.21.5
+[1;36m(VllmWorkerProcess pid=133674)[0;0m INFO 04-28 06:40:54 [custom_all_reduce_utils.py:244] reading GPU P2P access cache from /home/vchan26/.cache/vllm/gpu_p2p_access_cache_for_0,1.json
+INFO 04-28 06:40:54 [custom_all_reduce_utils.py:244] reading GPU P2P access cache from /home/vchan26/.cache/vllm/gpu_p2p_access_cache_for_0,1.json
+INFO 04-28 06:40:54 [shm_broadcast.py:264] vLLM message queue communication handle: Handle(local_reader_ranks=[1], buffer_handle=(1, 4194304, 6, 'psm_73f8b101'), local_subscribe_addr='ipc:///tmp/b1299878-eb91-4268-ac4f-5bb9d3947e5b', remote_subscribe_addr=None, remote_addr_ipv6=False)
+[1;36m(VllmWorkerProcess pid=133674)[0;0m INFO 04-28 06:40:54 [parallel_state.py:959] rank 1 in world size 2 is assigned as DP rank 0, PP rank 0, TP rank 1
+INFO 04-28 06:40:54 [parallel_state.py:959] rank 0 in world size 2 is assigned as DP rank 0, PP rank 0, TP rank 0
+INFO 04-28 06:40:54 [model_runner.py:1110] Starting to load model ../Qwen_Qwen2.5-3B-Instruct/...
+[1;36m(VllmWorkerProcess pid=133674)[0;0m INFO 04-28 06:40:54 [model_runner.py:1110] Starting to load model ../Qwen_Qwen2.5-3B-Instruct/...
+INFO 04-28 06:40:56 [loader.py:458] Loading weights took 2.36 seconds
+[1;36m(VllmWorkerProcess pid=133674)[0;0m INFO 04-28 06:40:56 [loader.py:458] Loading weights took 2.53 seconds
+INFO 04-28 06:40:57 [model_runner.py:1146] Model loading took 2.9348 GiB and 2.497694 seconds
+[1;36m(VllmWorkerProcess pid=133674)[0;0m INFO 04-28 06:40:57 [model_runner.py:1146] Model loading took 2.9348 GiB and 2.659432 seconds
+[1;36m(VllmWorkerProcess pid=133674)[0;0m INFO 04-28 06:41:01 [worker.py:267] Memory profiling takes 3.55 seconds
+[1;36m(VllmWorkerProcess pid=133674)[0;0m INFO 04-28 06:41:01 [worker.py:267] the current vLLM instance can use total_gpu_memory (15.56GiB) x gpu_memory_utilization (0.90) = 14.00GiB
+[1;36m(VllmWorkerProcess pid=133674)[0;0m INFO 04-28 06:41:01 [worker.py:267] model weights take 2.93GiB; non_torch_memory takes 0.17GiB; PyTorch activation peak memory takes 0.32GiB; the rest of the memory reserved for KV Cache is 10.58GiB.
+INFO 04-28 06:41:01 [worker.py:267] Memory profiling takes 3.62 seconds
+INFO 04-28 06:41:01 [worker.py:267] the current vLLM instance can use total_gpu_memory (15.56GiB) x gpu_memory_utilization (0.90) = 14.00GiB
+INFO 04-28 06:41:01 [worker.py:267] model weights take 2.93GiB; non_torch_memory takes 0.19GiB; PyTorch activation peak memory takes 1.41GiB; the rest of the memory reserved for KV Cache is 9.47GiB.
+INFO 04-28 06:41:01 [executor_base.py:112] # cuda blocks: 34469, # CPU blocks: 14563
+INFO 04-28 06:41:01 [executor_base.py:117] Maximum concurrency for 6144 tokens per request: 89.76x
+INFO 04-28 06:41:03 [model_runner.py:1456] Capturing cudagraphs for decoding. This may lead to unexpected consequences if the model is not static. To run the model in eager mode, set 'enforce_eager=True' or use '--enforce-eager' in the CLI. If out-of-memory error occurs during cudagraph capture, consider decreasing `gpu_memory_utilization` or switching to eager mode. You can also reduce the `max_num_seqs` as needed to decrease memory usage.
+[1;36m(VllmWorkerProcess pid=133674)[0;0m INFO 04-28 06:41:03 [model_runner.py:1456] Capturing cudagraphs for decoding. This may lead to unexpected consequences if the model is not static. To run the model in eager mode, set 'enforce_eager=True' or use '--enforce-eager' in the CLI. If out-of-memory error occurs during cudagraph capture, consider decreasing `gpu_memory_utilization` or switching to eager mode. You can also reduce the `max_num_seqs` as needed to decrease memory usage.
+INFO 04-28 06:41:21 [custom_all_reduce.py:195] Registering 2555 cuda graph addresses
+[1;36m(VllmWorkerProcess pid=133674)[0;0m INFO 04-28 06:41:22 [custom_all_reduce.py:195] Registering 2555 cuda graph addresses
+[1;36m(VllmWorkerProcess pid=133674)[0;0m INFO 04-28 06:41:22 [model_runner.py:1598] Graph capturing finished in 19 secs, took 0.22 GiB
+INFO 04-28 06:41:22 [model_runner.py:1598] Graph capturing finished in 19 secs, took 0.22 GiB
+INFO 04-28 06:41:22 [llm_engine.py:449] init engine (profile, create kv cache, warmup model) took 25.73 seconds
+INFO 04-28 06:41:25 [multiproc_worker_utils.py:137] Terminating local vLLM worker processes
+[1;36m(VllmWorkerProcess pid=133674)[0;0m INFO 04-28 06:41:25 [multiproc_worker_utils.py:259] Worker exiting
+
+Capturing CUDA graph shapes: 100%|█████████████████████████████████████████████████████████████████████████████| 35/35 [00:18<00:00,  1.93it/s]
+2025-04-28 06:41:24,212 - evaluate_safety - INFO - Read 100 model responses from sst_finetune.jsonl
+Processed prompts: 100%|███████████████████████████| 100/100 [00:01<00:00, 71.81it/s, est. speed input: 10934.08 toks/s, output: 143.63 toks/s]
+2025-04-28 06:41:25,675 - evaluate_safety - INFO - Processed 100 prompts
+100it [00:00, 118987.35it/s]
+2025-04-28 06:41:25,678 - evaluate_safety - INFO - safe: 0.29
+2025-04-28 06:41:25,800 - evaluate_safety - INFO - finished running scripts/evaluate_safety.py
+[rank0]:[W428 06:41:27.686516513 ProcessGroupNCCL.cpp:1496] Warning: WARNING: destroy_process_group() was not called before program exit, which can leak resources. For more info, please see https://pytorch.org/docs/stable/distributed.html#shutdown (function operator())
+/home/vchan26/.conda/envs/eceassignment1/lib/python3.10/multiprocessing/resource_tracker.py:224: UserWarning: resource_tracker: There appear to be 1 leaked shared_memory objects to clean up at shutdown
+  warnings.warn('resource_tracker: There appear to be %d '

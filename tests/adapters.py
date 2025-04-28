@@ -8,6 +8,7 @@ import torch
 from torch.utils.data import Dataset
 from transformers import PreTrainedTokenizerBase
 
+from cs336_alignment import sft_data, response_parsing, compute_dpo
 
 def get_packed_sft_dataset(
     tokenizer: PreTrainedTokenizerBase,
@@ -36,7 +37,12 @@ def get_packed_sft_dataset(
         "input_ids" contains the token IDs for the language modeling inputs, and "labels" contains
         the token IDs for the language modeling labels.
     """
-    raise NotImplementedError
+    return sft_data.get_packed_sft_dataset(
+        tokenizer=tokenizer,
+        dataset_path=dataset_path,
+        seq_length=seq_length,
+        shuffle=shuffle,
+    )
 
 
 def run_iterate_batches(
@@ -59,7 +65,11 @@ def run_iterate_batches(
     Returns:
         Iterable over batches, where each batch has size `batch_size`.
     """
-    raise NotImplementedError
+    return sft_data.run_iterate_batches(
+        dataset=dataset,
+        batch_size=batch_size,
+        shuffle=shuffle,
+    )
 
 
 def run_parse_mmlu_response(
@@ -85,7 +95,10 @@ def run_parse_mmlu_response(
         str (one of "A", "B", "C", or "D") if the model output can be parsed into a prediction,
         else None.
     """
-    raise NotImplementedError
+    return response_parsing.run_parse_mmlu_response(
+        mmlu_example=mmlu_example,
+        model_output=model_output,
+    )
 
 
 def run_parse_gsm8k_response(
@@ -102,7 +115,9 @@ def run_parse_gsm8k_response(
         str with the predicted numeric answer if the model output can be parsed into a prediction,
         else None.
     """
-    raise NotImplementedError
+    return response_parsing.run_parse_gsm8k_response(
+        model_output=model_output,
+    )
 
 
 def compute_per_instance_dpo_loss(
@@ -137,4 +152,12 @@ def compute_per_instance_dpo_loss(
     Returns:
         torch.Tensor with the DPO loss for this example.
     """
-    raise NotImplementedError
+    return compute_dpo.compute_per_instance_dpo_loss(
+        lm=lm,
+        lm_ref=lm_ref,
+        tokenizer=tokenizer,
+        beta=beta,
+        prompt=prompt,
+        response_chosen=response_chosen,
+        response_rejected=response_rejected,
+    )

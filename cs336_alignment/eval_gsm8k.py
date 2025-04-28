@@ -104,7 +104,7 @@ def main():
     logging.info(f"Results written to {args.output_file}")
 
     # Print summary (c)-(e)
-    print("\n=== GSM8K Zero-Shot Baseline ===")
+    print("\n=== GSM8K ===")
     print(f"Total examples:   {n}")
     print(f"Accuracy:         {accuracy*100:.2f}% ({num_correct}/{n})")
     print(f"Parse failures:   {num_fail}")
